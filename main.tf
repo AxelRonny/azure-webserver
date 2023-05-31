@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "webserver" {
-   name = "nginx-server"
+   name = "ar-nginx-server"
    location = var.location
 }
 # Connect the security group to the network interface
