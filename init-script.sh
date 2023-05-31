@@ -11,4 +11,4 @@ sudo sh get-docker.sh
 
 sudo wget https://hub.docker.com/layers/axelronny/nginx1/latest/images
 sudo docker build  -t nginx1 .
-docker run --name axelconteneurnginx -d -p 80:80 nginx1
+sudo docker run --name test-docker-nginx -d -p 80:80 nginx1
