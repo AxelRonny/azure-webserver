@@ -1,11 +1,15 @@
-output "public_ip_address" {
-value = module.Staging.The_webserver_Public_ip
+output "The_subnet_ID" {
+ value = azurerm_subnet.webserver-subnet.id
 }
 
-output "environment" {
- value = module.Staging.environment
- }
+output "The_vnet_ID" {
+ value = azurerm_virtual_network.webserver-net.id
+}
 
-output "Ressource_group_name" {
-  value = module.Staging.Ressource_group_name
+output "The_websrever_Private_ip" {
+   value = azurerm_linux_virtual_machine.nginx.private_ip_address
+}
+
+output "The_webserver_Public_ip" {
+   value = azurerm_linux_virtual_machine.nginx.public_ip_address
 }
