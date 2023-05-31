@@ -2,6 +2,11 @@ resource "azurerm_resource_group" "webserver" {
    name = "nginx-server"
    location = var.location
 }
+# Connect the security group to the network interface
+resource "azurerm_network_interface_security_group_association" "webserver" {
+  network_interface_id      = azurerm_network_interface.webserver.id
+  network_security_group_id = azurerm_network_security_group.allowedports.id
+}
 
 resource "azurerm_network_security_group" "allowedports" {
    name = "allowedports"
